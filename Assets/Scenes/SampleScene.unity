@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -442.5, y: 229.5}
+  m_AnchoredPosition: {x: 250, y: 245}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &37427237
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 934785250}
   - component: {fileID: 934785249}
   m_Layer: 0
-  m_Name: checkpoint
+  m_Name: Checkpoint
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5881,7 +5881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 549.81, y: 32.38}
+  m_AnchoredPosition: {x: 1418, y: 32.38}
   m_SizeDelta: {x: 1087.7401, y: 41.299957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131005616
@@ -5967,7 +5967,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 867.13226, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6030,7 +6030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -444.3, y: 191.79}
+  m_AnchoredPosition: {x: -447, y: 246}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410266888
@@ -6143,7 +6143,7 @@ GameObject:
   - component: {fileID: 1410565684}
   - component: {fileID: 1410565683}
   m_Layer: 0
-  m_Name: checkpoint (2)
+  m_Name: Checkpoint (2)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6406,7 +6406,7 @@ GameObject:
   - component: {fileID: 1750484555}
   - component: {fileID: 1750484554}
   m_Layer: 0
-  m_Name: checkpoint (3)
+  m_Name: Checkpoint (3)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6571,7 +6571,7 @@ GameObject:
   - component: {fileID: 2026492705}
   - component: {fileID: 2026492704}
   m_Layer: 0
-  m_Name: checkpoint (1)
+  m_Name: Checkpoint (1)
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6817,7 +6817,12 @@ PrefabInstance:
     - target: {fileID: 2757935166229244695, guid: 1e4e23d24a5648f44ba5befee0e301be,
         type: 3}
       propertyPath: m_Name
-      value: raceShip_1
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2757935166229244695, guid: 1e4e23d24a5648f44ba5befee0e301be,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3246523342388638125, guid: 1e4e23d24a5648f44ba5befee0e301be,
         type: 3}
@@ -6945,7 +6950,7 @@ PrefabInstance:
     - target: {fileID: 4369039143861950418, guid: 166b4dd831fc4654cb4e28c65f2f1154,
         type: 3}
       propertyPath: m_Name
-      value: line
+      value: CheckpointSingle
       objectReference: {fileID: 0}
     - target: {fileID: 4369039143861950422, guid: 166b4dd831fc4654cb4e28c65f2f1154,
         type: 3}
