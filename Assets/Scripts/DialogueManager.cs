@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public Text TextChanger;
         public void Start()
     {
+
+        //adding the dialogue for the queues
         Queue CheckpointRace = new Queue();
         CheckpointRace.Enqueue("Hello Chalanger");
         CheckpointRace.Enqueue("Today, you will be taking on the Checkpoint Race");
@@ -38,7 +40,7 @@ public class DialogueManager : MonoBehaviour
         AdvancedRace.Enqueue("So do not waste time while going aroudnd the course \n GoodLuck");
 
 
-
+        //checks what scene we are currently in to decide what queue to use
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForCheckpointRace"))
         {
             TextChanger.text = CheckpointRace.Dequeue().ToString();
