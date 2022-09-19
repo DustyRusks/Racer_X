@@ -135,7 +135,7 @@ public class checkpoint : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()  //------------------------------TIMER
     {
-        string formattedcurrenttime = $"Current: {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.00} | Lap {currentLap}/{_laps}";
+        string formattedcurrenttime = $"Current: {Mathf.FloorToInt(currentLapTime / 60)} :{currentLapTime % 60:00.00} | Lap\n {currentLap}/{_laps}";
         string formattedBestttime = $"Best: {Mathf.FloorToInt(bestLapTime / 60)}:{bestLapTime % 60:00.00} | Lap {bestLap}";
         if (hasStarted&&!hasFinished)
         {

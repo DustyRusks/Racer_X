@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DialogueForBeginnerRace.unity
+    guid: 38c6fa24be119b842af933e4d81f30e9
+  - enabled: 1
+    path: Assets/Scenes/DialogueForCheckpointRace.unity
+    guid: dca7bc6d2b8d20943bbb99e4911565a2
+  - enabled: 1
+    path: Assets/Scenes/DialogueForAdvancedRace.unity
+    guid: 731089461a146a842beb14ae7a85dd1f
   m_configObjects: {}

@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public Text TextChanger;
-        public void Start()
+    public GameObject btnNext;
+    public GameObject btnGoToRace;
+
+    public void Start()
     {
 
         //adding the dialogue for the queues
         Queue CheckpointRace = new Queue();
-        CheckpointRace.Enqueue("Hello Chalanger");
+        CheckpointRace.Enqueue("Hello Challenger");
         CheckpointRace.Enqueue("Today, you will be taking on the Checkpoint Race");
         CheckpointRace.Enqueue("This race is to test your skills with the vehicle");
         CheckpointRace.Enqueue("You will need to race through the checkpoints to gain more time around the course");
@@ -21,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 
 
         Queue BeginnerRace = new Queue();
-        BeginnerRace.Enqueue("Hello Challanger");
+        BeginnerRace.Enqueue("Hello Challenger");
         BeginnerRace.Enqueue("Today, you will be taking on the Beginner Race");
         BeginnerRace.Enqueue("This race is to test your skills with the vehicle and how you face againsts an opponent");
         BeginnerRace.Enqueue("You will need to race through the course, passing checkpoints and try and beat your opponent");
@@ -45,7 +48,10 @@ public class DialogueManager : MonoBehaviour
         {
             TextChanger.text = CheckpointRace.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
-            
+            if (btnGoToRace == true)
+            {
+                SceneManager.LoadScene(0);
+            }
 
 
         }
@@ -53,15 +59,33 @@ public class DialogueManager : MonoBehaviour
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForBeginnerRace"))
         {
             TextChanger.text = BeginnerRace.Dequeue().ToString();
+            if(Input.GetMouseButtonDown(0))
+            {
+                BeginnerRace.Dequeue().ToString();
+                Debug.Log("You are in Beginner Race");
+            }
+            if (btnGoToRace == true)
+            {
+                SceneManager.LoadScene(0);
+            }
+
 
         }
         else
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForAdvancedRace"))
         {
             TextChanger.text = AdvancedRace.Dequeue().ToString();
+            Debug.Log("You are in AdvancedRace");
+            if(btnGoToRace ==true)
+            {
+                SceneManager.LoadScene(0);
+            }
 
         }
     }
+
+
+
 
 
 
