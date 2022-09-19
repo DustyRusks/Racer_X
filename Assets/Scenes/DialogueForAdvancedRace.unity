@@ -648,7 +648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 789475733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1950614931}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: SceneChanger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &789475733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,6 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextChanger: {fileID: 548834139}
   btnNext: {fileID: 1362569517}
+  btnGoToRace: {fileID: 0}
 --- !u!4 &1950614932
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Text TextChanger;
     public GameObject btnNext;
-    public GameObject btnGoToRace;
+
 
     public void Start()
     {
@@ -48,10 +48,7 @@ public class DialogueManager : MonoBehaviour
         {
             TextChanger.text = CheckpointRace.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
-            if (btnGoToRace == true)
-            {
-                SceneManager.LoadScene(0);
-            }
+
 
 
         }
@@ -64,10 +61,7 @@ public class DialogueManager : MonoBehaviour
                 BeginnerRace.Dequeue().ToString();
                 Debug.Log("You are in Beginner Race");
             }
-            if (btnGoToRace == true)
-            {
-                SceneManager.LoadScene(0);
-            }
+
 
 
         }
@@ -76,12 +70,15 @@ public class DialogueManager : MonoBehaviour
         {
             TextChanger.text = AdvancedRace.Dequeue().ToString();
             Debug.Log("You are in AdvancedRace");
-            if(btnGoToRace ==true)
-            {
-                SceneManager.LoadScene(0);
-            }
+
 
         }
+
+
+    }
+    public void SceneChanger(string SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
     }
 
 
