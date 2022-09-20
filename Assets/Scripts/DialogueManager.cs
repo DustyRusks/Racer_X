@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         checkpointRaceDialogue.Enqueue("This race is to test your skills with the vehicle");
         checkpointRaceDialogue.Enqueue("You will need to race through the checkpoints to gain more time around the course");
         checkpointRaceDialogue.Enqueue("If you run out of time, you will lose the race");
-        checkpointRaceDialogue.Enqueue("So do not waste time while going aroudnd the course. Good Luck!");
+        checkpointRaceDialogue.Enqueue("So do not waste time while going aroudnd the course \nGood Luck!");
 
 
         beginnerRaceDialogue = new Queue<string>();
@@ -38,13 +38,17 @@ public class DialogueManager : MonoBehaviour
         beginnerRaceDialogue.Enqueue("This race is to test your skills with the vehicle and how you face againsts an opponent");
         beginnerRaceDialogue.Enqueue("You will need to race through the course, passing checkpoints and try and beat your opponent");
         beginnerRaceDialogue.Enqueue("If you do not beat the opponent, you will not be able to advance through the game");
-        beginnerRaceDialogue.Enqueue("So do not waste time while going aroudnd the course. Good Luck!");
+        beginnerRaceDialogue.Enqueue("So do not waste time while going aroudnd the course \nGood Luck!");
 
         advancedRaceDialogue = new Queue<string>();
 
         advancedRaceDialogue.Enqueue("Hello Challenger");
-        advancedRaceDialogue.Enqueue("This part of the game is not implemented.");
-        advancedRaceDialogue.Enqueue("So go away.");
+        advancedRaceDialogue.Enqueue("Today, you will be taking on the Advanced Race");
+        advancedRaceDialogue.Enqueue("This race is to test your skills with the vehicle and how you face an opponent through a track with multiple ways to go");
+        advancedRaceDialogue.Enqueue("You will need to race through the course, passing checkpoints, and try and beat your opponent");
+        advancedRaceDialogue.Enqueue("If you do not beat the opponent, you will not be able to advance through the game");
+        advancedRaceDialogue.Enqueue("There will be two paths on this track, you may take either of them");
+        advancedRaceDialogue.Enqueue("So do not waste time while going around the course \nGoodLuck!");
 
     }
     public void nextConvo()
@@ -86,14 +90,14 @@ public class DialogueManager : MonoBehaviour
 
         }
 
-        checkpointRaceDialogue.Dequeue();
+        //checkpointRaceDialogue.Dequeue();
     }
     public void Start()
     {
         
         nextDialogue();
         //adding the dialogue for the queues
-        Queue CheckpointRace = new Queue();
+        /*Queue CheckpointRace = new Queue();
         CheckpointRace.Enqueue("Hello Challenger");
         CheckpointRace.Enqueue("Today, you will be taking on the Checkpoint Race");
         CheckpointRace.Enqueue("This race is to test your skills with the vehicle");
@@ -120,7 +124,7 @@ public class DialogueManager : MonoBehaviour
         AdvancedRace.Enqueue("You will need to race through the course, passing checkpoints, and try and beat your opponent");
         AdvancedRace.Enqueue("If you do not beat the opponent, you will not be able to advance through the game");
         AdvancedRace.Enqueue("There will be two paths on this track, you may take either of them");
-        AdvancedRace.Enqueue("So do not waste time while going around the course \n GoodLuck");
+        AdvancedRace.Enqueue("So do not waste time while going around the course \n GoodLuck");*/
 
 
         //checks what scene we are currently in to decide what queue to use
@@ -133,7 +137,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-            TextChanger.text = CheckpointRace.Dequeue().ToString();
+            //TextChanger.text = CheckpointRace.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
 
 
@@ -149,10 +153,10 @@ public class DialogueManager : MonoBehaviour
 
 
             MyImage.GetComponent<Image>().sprite = img1;
-            TextChanger.text = BeginnerRace.Dequeue().ToString();
+            //TextChanger.text = BeginnerRace.Dequeue().ToString();
             if(Input.GetMouseButtonDown(0))
             {
-                BeginnerRace.Dequeue().ToString();
+               // BeginnerRace.Dequeue().ToString();
                 Debug.Log("You are in Beginner Race");
             }
 
@@ -169,7 +173,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-            TextChanger.text = AdvancedRace.Dequeue().ToString();
+           // TextChanger.text = AdvancedRace.Dequeue().ToString();
             Debug.Log("You are in AdvancedRace");
 
 

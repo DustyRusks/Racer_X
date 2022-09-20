@@ -7,7 +7,7 @@
         "3": "This race is to test your skills with the vehicle",
         "4": "You will need to race through the checkpoints to gain more time around the course",
         "5": "If you run out of time, you will lose the race",
-        "6": "So do not waste time while going around the course \n GoodLuck"
+        "6": "So do not waste time while going around the course \nGoodLuck!"
       }
     ]
   },
@@ -19,7 +19,7 @@
         "3": "This race is to test your skills with the vehicle and how you face an opponent",
         "4": "You will need to race through the course, passing checkpoints, and try and beat your opponent",
         "5": "If you do not beat the opponent, you will not be able to advance through the game",
-        "6": "So do not waste time while going around the course \n GoodLuck"
+        "6": "So do not waste time while going around the course \nGoodLuck!"
       }
     ]
   },
@@ -32,7 +32,7 @@
         "4": "You will need to race through the course, passing checkpoints, and try and beat your opponent",
         "5": "If you do not beat the opponent, you will not be able to advance through the game",
         "6": "There will be two paths on this track, you may take either of them",
-        "7": "So do not waste time while going around the course \n GoodLuck"
+        "7": "So do not waste time while going around the course \nGoodLuck!"
       }
     ]
   }
