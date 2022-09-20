@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class checkpoint : MonoBehaviour
 {
@@ -75,6 +76,7 @@ public class checkpoint : MonoBehaviour
 
                         Debug.Log("FINISHED");
                         hasFinished = true;
+                        SceneManager.LoadScene(4);
                         //hasStarted=false;
                     }
                     else
@@ -112,6 +114,8 @@ public class checkpoint : MonoBehaviour
                 if (hasFinished)
                 {
                     return;
+                    
+
                 }
                 //check correct checkpoint
                 if (thisCheckpoint == checkpointArray[i] && i == currentCheckpoint)

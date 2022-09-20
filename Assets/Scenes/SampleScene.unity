@@ -6898,7 +6898,7 @@ MonoBehaviour:
   _breakForce: 70
   _collisionMultiplier: 5
   _broken: 0
-  explosion_1: {fileID: 0}
+  explosion_1: {fileID: 1124853714}
 --- !u!114 &3469287837433910365
 MonoBehaviour:
   m_ObjectHideFlags: 0
