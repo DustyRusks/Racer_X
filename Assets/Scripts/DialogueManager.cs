@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Queue<string> advancedRaceDialogue;
     [SerializeField] private Queue<string> expertDialogue;
     [SerializeField] private TextMeshProUGUI dialogueDisplay;
+
+    private Sprite img1;
+    public GameObject MyImage;
+
+
 
     public void nextDialogue()
     {
@@ -48,7 +54,13 @@ public class DialogueManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForCheckpointRace"))
         {
-            dialogueDisplay.text = checkpointRaceDialogue.Peek();
+
+
+
+
+
+
+            dialogueDisplay.text = checkpointRaceDialogue.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
 
 
@@ -57,6 +69,7 @@ public class DialogueManager : MonoBehaviour
         else
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForBeginnerRace"))
         {
+
             dialogueDisplay.text = beginnerRaceDialogue.Dequeue().ToString();
 
             Debug.Log("You are in BeginnerRace");
@@ -66,6 +79,7 @@ public class DialogueManager : MonoBehaviour
         else
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForAdvancedRace"))
         {
+
             dialogueDisplay.text = advancedRaceDialogue.Dequeue().ToString();
             Debug.Log("You are in AdvancedRace");
 
@@ -76,6 +90,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void Start()
     {
+        
         nextDialogue();
         //adding the dialogue for the queues
         Queue CheckpointRace = new Queue();
@@ -100,16 +115,24 @@ public class DialogueManager : MonoBehaviour
 
         Queue AdvancedRace = new Queue();
         AdvancedRace.Enqueue("Hello Challenger");
-        AdvancedRace.Enqueue("Hello Challenger");
-        AdvancedRace.Enqueue("Hello Challenger");
-        AdvancedRace.Enqueue("Hello Challenger");
-        AdvancedRace.Enqueue("Hello Challenger");
-        AdvancedRace.Enqueue("So do not waste time while going aroudnd the course \n GoodLuck");
+        AdvancedRace.Enqueue("Today, you will be taking on the Advanced Race");
+        AdvancedRace.Enqueue("This race is to test your skills with the vehicle and how you face an opponent through a track with multiple ways to go");
+        AdvancedRace.Enqueue("You will need to race through the course, passing checkpoints, and try and beat your opponent");
+        AdvancedRace.Enqueue("If you do not beat the opponent, you will not be able to advance through the game");
+        AdvancedRace.Enqueue("There will be two paths on this track, you may take either of them");
+        AdvancedRace.Enqueue("So do not waste time while going around the course \n GoodLuck");
 
 
         //checks what scene we are currently in to decide what queue to use
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForCheckpointRace"))
         {
+            //Adds the image for the Character that speaks to you
+            MyImage.AddComponent(typeof(Image));
+            img1 = Resources.Load<Sprite>("Images/RaceCheckpoint");
+            MyImage.GetComponent<Image>().sprite = img1;
+
+
+
             TextChanger.text = CheckpointRace.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
 
@@ -119,6 +142,13 @@ public class DialogueManager : MonoBehaviour
         else
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForBeginnerRace"))
         {
+            //Adds the image for the Character that speaks to you
+            MyImage.AddComponent(typeof(Image));
+            img1 = Resources.Load<Sprite>("Images/RaceBeginner");
+
+
+
+            MyImage.GetComponent<Image>().sprite = img1;
             TextChanger.text = BeginnerRace.Dequeue().ToString();
             if(Input.GetMouseButtonDown(0))
             {
@@ -132,6 +162,13 @@ public class DialogueManager : MonoBehaviour
         else
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("DialogueForAdvancedRace"))
         {
+            //Adds the image for the Character that speaks to you
+            MyImage.AddComponent(typeof(Image));
+            img1 = Resources.Load<Sprite>("Images/RaceAdvanced");
+            MyImage.GetComponent<Image>().sprite = img1;
+
+
+
             TextChanger.text = AdvancedRace.Dequeue().ToString();
             Debug.Log("You are in AdvancedRace");
 

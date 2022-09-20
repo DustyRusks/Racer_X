@@ -27,11 +27,11 @@
     "AdvancedRace": [
       {
         "1": "Hello Challenger",
-        "2": "Today, you will be taking on the Beginner Race",
-        "3": "This race is to test your skills with the vehicle and how you face an opponent",
+        "2": "Today, you will be taking on the Advanced Race",
+        "3": "This race is to test your skills with the vehicle and how you face an opponent through a track with multiple ways to go",
         "4": "You will need to race through the course, passing checkpoints, and try and beat your opponent",
         "5": "If you do not beat the opponent, you will not be able to advance through the game",
-        "6": "There will be to paths on this track, you may take either of them",
+        "6": "There will be two paths on this track, you may take either of them",
         "7": "So do not waste time while going around the course \n GoodLuck"
       }
     ]
