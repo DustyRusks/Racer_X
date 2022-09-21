@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Queue<string> expertDialogue;
     [SerializeField] private TextMeshProUGUI dialogueDisplay;
 
+
     private Sprite img1;
     public GameObject MyImage;
 
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     public void nextDialogue()
     {
+
         checkpointRaceDialogue = new Queue<string>();
         checkpointRaceDialogue.Enqueue("Hello Challenger");
         checkpointRaceDialogue.Enqueue("Today, you will be taking on the Checkpoint Race");
