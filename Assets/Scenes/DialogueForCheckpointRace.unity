@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7f2f00ee09348a0c88e80c71d27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json: {fileID: 4900000, guid: 7030031ff5005f644882da227b7a0d66, type: 3}
   TextChanger: {fileID: 1878820908}
   btnNext: {fileID: 1650709087}
   dialogueDisplay: {fileID: 263575444}

@@ -1,3 +1,10 @@
 {
-
+	"JSONReader":
+	[
+	
+		"dialogueCheckpoint":
+		"dialogueBeginner":
+		"dialogueAdvanced":
+	
+	]
 }

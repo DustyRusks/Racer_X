@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ using UnityEditor.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
+    public TextAsset json;
     public Text TextChanger;
     public GameObject btnNext;
     [SerializeField] private Queue<string> checkpointRaceDialogue;
@@ -20,7 +22,7 @@ public class DialogueManager : MonoBehaviour
     private Sprite img1;
     public GameObject MyImage;
 
-
+    
 
     public void nextDialogue()
     {
@@ -97,6 +99,8 @@ public class DialogueManager : MonoBehaviour
     {
         
         nextDialogue();
+
+        //Debug.Log(JSONReader.getJSON(json).num1);
         //adding the dialogue for the queues
         /*Queue CheckpointRace = new Queue();
         CheckpointRace.Enqueue("Hello Challenger");
@@ -196,3 +200,17 @@ public class DialogueManager : MonoBehaviour
 
 
 }
+//public static class JSONReader
+//{
+//    public static JSONexample getJSON(TextAsset json)
+//    {
+//        JSONexample example = JsonUtility.FromJson<JSONexample>(json.text);
+//            return example;
+//    }
+//}
+
+//[System.Serializable]
+//public class JSONexample
+//{
+//    public int num1;
+//}
