@@ -16,6 +16,11 @@ public class checkpoint : MonoBehaviour
     public TextMeshProUGUI _timer;
     public TextMeshProUGUI _bestLap;
 
+    [Header("Countdown_Timer")]
+    public float timeValue = 90;
+    public TextMeshProUGUI _countdownTimer;
+    public float checkpoiintAddTime=5f;
+
     [Header("Settings")]
     public float _laps = 1;
     [Header("Info")]
@@ -23,6 +28,7 @@ public class checkpoint : MonoBehaviour
     private float currentLap;
     private bool hasStarted;
     private bool hasFinished;
+    private bool passedCheckpoint=false;
     private float currentLapTime;
     private float bestLapTime;
     private float bestLap;
@@ -42,10 +48,37 @@ public class checkpoint : MonoBehaviour
 
     }
 
+    public void DisplayCountdownTime(float displayTime)
+    {
+        if(displayTime<0)
+        {
+            displayTime = 0;
+        }
+
+        //else if (displayTime>0)
+        //{
+            
+        //}
+
+        float _minutes = Mathf.FloorToInt(displayTime/60);
+        float _seconds = Mathf.FloorToInt(displayTime%60);
+        float _milliseconds = displayTime%1*100;
+        _countdownTimer.text = string.Format("{0:00}:{1:00}:{2:00}", _minutes, _seconds, _milliseconds);
+    }
+
 
     private void Update()
     {
         
+        //if(timeValue>0)
+        //{
+        //    timeValue -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    timeValue = 0;
+        //}
+        //DisplayCountdownTime(timeValue);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -60,6 +93,8 @@ public class checkpoint : MonoBehaviour
             {
                 Debug.Log("STARTED");
                 hasStarted = true;
+                //passedCheckpoint = true;
+                
             }
             //ended lap or race
             else if (thisCheckpoint == _end && hasStarted)
@@ -76,7 +111,7 @@ public class checkpoint : MonoBehaviour
 
                         Debug.Log("FINISHED");
                         hasFinished = true;
-                        SceneManager.LoadScene(4);
+                        SceneManager.LoadScene(5);
                         //hasStarted=false;
                     }
                     else
@@ -122,6 +157,8 @@ public class checkpoint : MonoBehaviour
                 {
                     Debug.Log($"PASSED CHECKPOINT - {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.00}");
                     currentCheckpoint++;
+                    passedCheckpoint = true;
+
                 }
                 //check incorrect checkpoint
                 else if (thisCheckpoint == checkpointArray[i] && i != currentCheckpoint)
@@ -158,6 +195,22 @@ public class checkpoint : MonoBehaviour
                     bestLapTime = currentLapTime;
                 }
             }
+
+            if (timeValue > 0)
+            {
+                timeValue -= Time.deltaTime;
+            }
+            else
+            {
+                timeValue = 0;
+            }
+
+            if (passedCheckpoint == true)
+            {
+                timeValue = timeValue + checkpoiintAddTime;
+                passedCheckpoint = false;
+            }
+            DisplayCountdownTime(timeValue);
         }
     }
 }
