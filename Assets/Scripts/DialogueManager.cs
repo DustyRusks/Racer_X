@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.SceneManagement;
+//using UnityEditor.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {

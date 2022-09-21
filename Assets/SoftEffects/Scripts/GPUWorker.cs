@@ -2171,7 +2171,9 @@ namespace Mkey
     }
 
     [Serializable]
+#pragma warning disable CS0660 // Type defines operator == or operator != but does not override Object.Equals(object o)
     public struct int2
+#pragma warning restore CS0660 // Type defines operator == or operator != but does not override Object.Equals(object o)
     {
         public int X;
         public int Y;
