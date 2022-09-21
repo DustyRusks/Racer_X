@@ -53,7 +53,9 @@ public class checkpoint : MonoBehaviour
         if(displayTime<0)
         {
             displayTime = 0;
+            SceneManager.LoadScene(6);
         }
+
 
         //else if (displayTime>0)
         //{

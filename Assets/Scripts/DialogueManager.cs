@@ -43,7 +43,6 @@ public class DialogueManager : MonoBehaviour
         beginnerRaceDialogue.Enqueue("So do not waste time while going aroudnd the course \nGood Luck!");
 
         advancedRaceDialogue = new Queue<string>();
-
         advancedRaceDialogue.Enqueue("Hello Challenger");
         advancedRaceDialogue.Enqueue("Today, you will be taking on the Advanced Race");
         advancedRaceDialogue.Enqueue("This race is to test your skills with the vehicle and how you face an opponent through a track with multiple ways to go");
