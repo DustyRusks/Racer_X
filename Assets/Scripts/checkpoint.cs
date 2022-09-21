@@ -33,6 +33,8 @@ public class checkpoint : MonoBehaviour
     private float bestLapTime;
     private float bestLap;
 
+    public Stack Checkpoints = new Stack();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,11 @@ public class checkpoint : MonoBehaviour
 
         //currentLap = 0;
         bestLapTime = 0;
+        //Checkpoints.Push("Start/End");
+        Checkpoints.Push("Checkpoint1");
+        Checkpoints.Push("Checkpoint2");
+        Checkpoints.Push("Checkpoint3");
+        Checkpoints.Push("Checkpoint4");
 
 
     }
@@ -96,6 +103,8 @@ public class checkpoint : MonoBehaviour
                 Debug.Log("STARTED");
                 hasStarted = true;
                 //passedCheckpoint = true;
+                Debug.Log(Checkpoints.Count);
+                Checkpoints.Pop();
                 
             }
             //ended lap or race
@@ -105,7 +114,8 @@ public class checkpoint : MonoBehaviour
                 if (currentLap == _laps)
                 {
                     if (currentCheckpoint == checkpointArray.Length)
-                    {
+                        //if (currentCheckpoint == Checkpoints.Count)
+                        {
                         if(currentLapTime<bestLapTime)
                         {
                             bestLap = currentLap;
@@ -125,7 +135,11 @@ public class checkpoint : MonoBehaviour
                 else if (currentLap < _laps)
                 {
                     if (currentCheckpoint == checkpointArray.Length)
+
+                    //trying to use the stack
+                   // if (currentCheckpoint == Checkpoints.Count)
                     {
+                        Checkpoints.Pop();
                         if (currentLapTime < bestLapTime)
                         {
                             bestLap = currentLap;
@@ -146,29 +160,55 @@ public class checkpoint : MonoBehaviour
 
             //loop through checkpoints; compare and check which have been passed
 
-            for (int i = 0; i < checkpointArray.Length; i++)
-            {
-                if (hasFinished)
-                {
-                    return;
-                    
+             for (int i = 0; i < checkpointArray.Length; i++)
+             {
+                 if (hasFinished)
+                 {
+                     return;
 
-                }
-                //check correct checkpoint
-                if (thisCheckpoint == checkpointArray[i] && i == currentCheckpoint)
-                {
-                    Debug.Log($"PASSED CHECKPOINT - {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.00}");
-                    currentCheckpoint++;
-                    passedCheckpoint = true;
 
-                }
-                //check incorrect checkpoint
-                else if (thisCheckpoint == checkpointArray[i] && i != currentCheckpoint)
-                {
-                    Debug.Log("WRONG CHECKPOINT");
-                    currentCheckpoint++;
-                }
-            }
+                 }
+                 //check correct checkpoint
+                 if (thisCheckpoint == checkpointArray[i] && i == currentCheckpoint)
+                 {
+                     Debug.Log($"PASSED CHECKPOINT - {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.00}");
+                     currentCheckpoint++;
+                     passedCheckpoint = true;
+
+                 }
+                 //check incorrect checkpoint
+                 else if (thisCheckpoint == checkpointArray[i] && i != currentCheckpoint)
+                 {
+                     Debug.Log("WRONG CHECKPOINT");
+                     currentCheckpoint++;
+                 }
+             }
+            //tring to use the stack
+            /* for (int i = 0; i < Checkpoints.Count; i++)
+             {
+                 if (hasFinished)
+                 {
+                     return;
+
+
+                 }
+                 else
+                 //check correct checkpoint
+                 if (thisCheckpoint == Checkpoints.Count)
+                 {
+                     Debug.Log($"PASSED CHECKPOINT - {Mathf.FloorToInt(currentLapTime / 60)}:{currentLapTime % 60:00.00}");
+                     currentCheckpoint++;
+                     passedCheckpoint = true;
+                     Checkpoints.Pop();
+
+                 }
+                 //check incorrect checkpoint
+                 else if (thisCheckpoint == checkpointArray[i] && i != currentCheckpoint)
+                 {
+                     Debug.Log("WRONG CHECKPOINT");
+                     currentCheckpoint++;
+                 }
+             }*/
         }
 
     }
