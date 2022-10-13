@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Newtonsoft.Json;
 //using UnityEditor.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
@@ -21,6 +22,8 @@ public class DialogueManager : MonoBehaviour
 
     private Sprite img1;
     public GameObject MyImage;
+
+    
 
     
 
@@ -144,6 +147,7 @@ public class DialogueManager : MonoBehaviour
 
             //TextChanger.text = CheckpointRace.Dequeue().ToString();
             Debug.Log("You are in checkpointRace");
+           // LoadJson();
 
 
 
@@ -190,6 +194,19 @@ public class DialogueManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneName);
     }
+
+/*    public void LoadJson()
+    {
+        using(StreamReader r = new StreamReader("file.json"))
+        {
+            string json = r.ReadToEnd();
+            dynamic array = JsonConvert.DeserializeObject(json);
+            foreach (var item in array)
+            {
+                Debug.Log("{0} {1}"+ item.temp+ item.vcc);
+            }
+        }
+    }*/
 
 
 
