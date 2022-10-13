@@ -499,7 +499,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SampleScene
+          m_StringArgument: BeginnerRace
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &557064207
@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ba7f2f00ee09348a0c88e80c71d27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  json: {fileID: 0}
   TextChanger: {fileID: 1616493041}
   btnNext: {fileID: 329726878}
   dialogueDisplay: {fileID: 614493648}

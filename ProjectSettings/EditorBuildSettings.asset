@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WINNER.unity
     guid: b6c69d7a4025e58479ef9856f6d24107
   - enabled: 1
+    path: Assets/Scenes/BeginnerRace.unity
+    guid: 1ed5e68879704864d8f5eb81187d5aa9
+  - enabled: 1
     path: Assets/Scenes/lose.unity
     guid: be355c619efed9c479d41668ea7290ec
   m_configObjects: {}
