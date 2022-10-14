@@ -22,10 +22,56 @@ public class DialogueManager : MonoBehaviour
 
     private Sprite img1;
     public GameObject MyImage;
+    public class Dialogue
+    {
+        public string Q1 { get; set; }
+        public string Q2 { get; set; }
+        public string Q3 { get; set; }
+        public string Q4 { get; set; }
+        public string Q5 { get; set; }
+        public string Q6 { get; set; }
+        public string Q7 { get; set; }
+    }
 
-    
 
-    
+    public class JSONSetup
+    {
+        Dialogue CheckpointRace = new Dialogue()
+        {
+            Q1 = "Hello Challenger",
+            Q2 = "Today, you will be taking on the Checkpoint Race",
+            Q3 = "This race is to test your skills with the vehicle",
+            Q4 = "You will need to race through the checkpoints to gain more time around the course",
+            Q5 = "If you run out of time, you will lose the race",
+            Q6 = "So do not waste time while going aroudnd the course \nGood Luck!"
+        };
+
+        Dialogue BeginnerRace = new Dialogue()
+        {
+            Q1 = "Hello Challenger",
+            Q2 = "Today, you will be taking on the Beginner Race",
+            Q3 = "This race is to test your skills with the vehicle and how you face againsts an opponent",
+            Q4 = "You will need to race through the course, passing checkpoints and try and beat your opponent",
+            Q5 = "If you do not beat the opponent, you will not be able to advance through the game",
+            Q6 = "So do not waste time while going aroudnd the course \nGood Luck!"
+        };
+
+        Dialogue AdvancedRace = new Dialogue()
+        {
+            Q1 = "Hello Challenger",
+            Q2 = "Today, you will be taking on the Advanced Race",
+            Q3 = "This race is to test your skills with the vehicle and how you face an opponent through a track with multiple ways to go",
+            Q4 = "You will need to race through the course, passing checkpoints, and try and beat your opponent",
+            Q5 = "If you do not beat the opponent, you will not be able to advance through the game",
+            Q6 = "There will be two paths on this track, you may take either of them",
+            Q7 = "So do not waste time while going around the course \nGoodLuck!"
+        };
+
+    }
+
+
+
+
 
     public void nextDialogue()
     {
